@@ -3,7 +3,7 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from ibm_cloud_sdk_core import ApiException
 
 #Authenticate user on IBM Cloud to do VPC VSI commands
-authenticator = IAMAuthenticator(os.environ.get('key', url='https://iam.cloud.ibm.com')
+authenticator = IAMAuthenticator(os.environ.get('key'), url='https://iam.cloud.ibm.com')
 
 
 #  Listing VPCs
