@@ -13,10 +13,23 @@ service.set_service_url('https://br-sao.iaas.cloud.ibm.com/v1')
 #Get the required action from environment variable
 VSIaction = os.environ['action']
 
+#  Listing Instances
+print("List Instances")
+try:
+    instances = service.list_instances().get_result()['instances']
+except ApiException as e:
+  print("List instances failed with status code " + str(e.code) + ": " + e.message)
+for instance in instances:
+    print(instance['id'], "\t",  instance['name'])
+
+instanceId = instances[0]['id']
+instanceName = instances[0]['name']
+
+
 # List of instance ID to perform action
 instance_ids = []
 
-# Read list from environment variables (assume there will not be more that 100 VSIs)
+# Read list from environment variables (assume there will not be more that 5 VSIs)
 for VSI in range(1,5):
     try:
         instance_ids.append(os.environ['VSI_' + str(VSI)])
