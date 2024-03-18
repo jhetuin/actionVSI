@@ -17,7 +17,7 @@ VSIaction = os.environ['action']
 instance_ids = []
 
 # Read list from environment variables (assume there will not be more that 100 VSIs)
-for VSI in range(1,100):
+for VSI in range(1,5):
     try:
         instance_ids.append(os.environ['VSI_' + str(VSI)])
     except:
