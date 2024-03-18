@@ -1,16 +1,18 @@
 import os
-from ibm_vpc import VpcV1
+#from ibm_vpc import VpcV1
+from ibm_code_engine_sdk.code_engine_v2 import CodeEngineV2
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 #Authenticate user on IBM Cloud to do VPC VSI commands
 API_KEY = os.environ['api_key']
 authenticator = IAMAuthenticator(os.environ.get('api_key'), url='https://iam.cloud.ibm.com')
 #authenticator = IAMAuthenticator(API_KEY)
-service = VpcV1(authenticator=authenticator)
+#service = VpcV1(authenticator=authenticator)
 
 
 #Set API endpoints
-service.set_service_url('https://br-sao.iaas.cloud.ibm.com/v1')
+service = CodeEngineV2(authenticator=authenticator)
+service.set_service_url('https://api.eu-gb.codeengine.cloud.ibm.com/v2')
 
 #Get the required action from environment variable
 VSIaction = os.environ['action']
