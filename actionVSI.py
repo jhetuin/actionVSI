@@ -4,8 +4,10 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 #Authenticate user on IBM Cloud to do VPC VSI commands
 API_KEY = os.environ['api_key']
-authenticator = IAMAuthenticator(API_KEY)
+authenticator = IAMAuthenticator(API_KEY, url='https://iam.cloud.ibm.com')
+#authenticator = IAMAuthenticator(API_KEY)
 service = VpcV1(authenticator=authenticator)
+
 
 #Set API endpoints
 service.set_service_url('https://br-sao.iaas.cloud.ibm.com/v1')
