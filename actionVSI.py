@@ -37,13 +37,13 @@ for instance in instances:
 
 
 #  Updating Instance
-print("Updated Instance")
-try:
-    newInstanceName = instanceName + "-1"
-    instance = service.update_instance(
-        id=instanceId,
-        name=newInstanceName,
-    ).get_result()
-except ApiException as e:
-    print("Update instance failed with status code " + str(e.code) + ": " + e.message)
-print(instance['id'], "\t",  instance['name'])
+#print("Updated Instance")
+#try:
+#    newInstanceName = instanceName + "-1"
+#    instance = service.update_instance(
+#        id=instanceId,
+#        name=newInstanceName,
+#    ).get_result()
+#except ApiException as e:
+#    print("Update instance failed with status code " + str(e.code) + ": " + e.message)
+#print(instance['id'], "\t",  instance['name'])
