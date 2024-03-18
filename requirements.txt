@@ -1,2 +1,1 @@
 ibm-vpc>=0.21.0
-ibm_code_engine_sdk>=3.1.1
