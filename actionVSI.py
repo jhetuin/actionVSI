@@ -1,12 +1,10 @@
 import os
-from ibm_vpc import VpcV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from ibm_cloud_sdk_core import ApiException
 
 #Authenticate user on IBM Cloud to do VPC VSI commands
-API_KEY = os.environ['api_key']
-authenticator = IAMAuthenticator(API_KEY)
-service = VpcV1(authenticator=authenticator)
+authenticator = IAMAuthenticator(os.environ.get('key', url='https://iam.cloud.ibm.com')
+
 
 #  Listing VPCs
 print("List VPCs")
@@ -35,8 +33,6 @@ except ApiException as e:
 for instance in instances:
     print(instance['id'], "\t",  instance['name'])
 
-instanceId = instances[0]['id']
-instanceName = instances[0]['name']
 
 #  Updating Instance
 print("Updated Instance")
