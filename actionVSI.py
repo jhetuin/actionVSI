@@ -22,9 +22,6 @@ except ApiException as e:
 for instance in instances:
     print(instance['id'], "\t",  instance['name'])
 
-instanceId = instances[0]['id']
-instanceName = instances[0]['name']
-
 
 # List of instance ID to perform action
 instance_ids = []
