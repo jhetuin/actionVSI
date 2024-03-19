@@ -17,9 +17,6 @@ service.set_service_url('https://' + os.environ.get('region') + '.iaas.cloud.ibm
 #service.set_service_url('https://api.eu-gb.codeengine.cloud.ibm.com/v2')
 
 
-#Get the required action from environment variable
-VSIaction = os.environ['action']
-
 # List of instance ID to perform action
 instance_ids = []
 
@@ -30,9 +27,12 @@ for VSI in range(1,5):
     except:
         break
 
+#Get the required action from environment variable
+VSIaction = os.environ['action']
+
 # Perform action on list
 for instance_id in instance_ids:
-    print('Action ' + os.environ('action') + ' de l'instance ' + (instance_id))
+    print( 'Action ' + VSIaction + ' of ' + instance_id )
     response = service.create_instance_action(
         instance_id,
         type = VSIaction,
