@@ -5,8 +5,16 @@ from ibm_cloud_sdk_core import ApiException
 
 #Authenticate user on IBM Cloud to do VPC VSI commands
 authenticator = IAMAuthenticator(os.environ.get('key'), url='https://iam.cloud.ibm.com')
-
 service = VpcV1(authenticator=authenticator)
+
+#or
+#API_KEY = os.environ['api_key']
+#authenticator = IAMAuthenticator(API_KEY)
+
+#Set API endpoints
+#service.set_service_url('https://br-sao.iaas.cloud.ibm.com/v1')
+#service.set_service_url('https://eu-gb.iaas.cloud.ibm.com/v1')
+service.set_service_url('https://api.eu-gb.codeengine.cloud.ibm.com/v2')
 
 #  Listing VPCs
 print("List VPCs")
