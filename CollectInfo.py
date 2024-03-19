@@ -13,7 +13,7 @@ service = VpcV1(authenticator=authenticator)
 
 #Set API endpoints
 #service.set_service_url('https://eu-gb.iaas.cloud.ibm.com/v1')
-service.set_service_url('https://' +region+ '.iaas.cloud.ibm.com/v1')
+service.set_service_url('https://' + os.environ.get('region') + '.iaas.cloud.ibm.com/v1')
 #service.set_service_url('https://api.eu-gb.codeengine.cloud.ibm.com/v2')
 
 #  Listing VPCs
