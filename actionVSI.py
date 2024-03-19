@@ -32,7 +32,7 @@ for VSI in range(1,5):
 
 # Perform action on list
 for instance_id in instance_ids:
-    print('Action ' + os.environ['action'] + ' de l'instance ' + instance_id)
+    print('Action ' + os.environ('action') + ' de l'instance ' + (instance_id))
     response = service.create_instance_action(
         instance_id,
         type = VSIaction,
