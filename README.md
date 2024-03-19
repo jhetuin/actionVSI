@@ -1,7 +1,10 @@
 
 # Project Title
 
-A brief description of what this project does and who it's for
+Python programm to start and stop VSI in IBM Cloud.
+Run in Code Engine feature of IBM Cloud.
+
+You can schedule to automatically start stop VSI instances.
 
 
 ## Deployment
